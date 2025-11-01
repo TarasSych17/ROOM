@@ -1,0 +1,212 @@
+/* --- Стилі для body --- */
+/* Блоку body задається фонове зображення 'img/fon.jpg', яке не повторюється, фіксоване при прокрутці і займає всю площу екрану */
+body {
+  background: url(img/fon.jpg) no-repeat fixed;
+  background-size: cover;
+}
+
+/* --- Стиль .block --- */
+/* Це може бути центральний блок на сторінці (наприклад, заголовок чи важливий текст) */
+/* Прозорий фон, темно-червоний текст, центрований текст, внутрішні відступи 40px, ширина 10em, великий шрифт 40px */
+.block {
+  background: rgba(0,0,0,0.8);
+  color: #832727;
+  padding: 10px; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50em;
+  font-size: 13px;
+  border-radius: 15px;
+}
+
+/* --- Стиль .portfol --- */
+/* Може використовуватись для секції портфоліо */
+/* Прозорий фон, темно-червоний текст, центрований, внутрішні відступи 30px, ширина 40em */
+.sss {
+  background: rgba(0,0,0,0.5);
+  color: #832727;
+  padding: 30px; 
+  text-align: center;
+  width: 40em;
+}
+/* --- Стиль .round --- */
+/* Для круглих елементів, наприклад фото або кнопки */
+/* Робить елемент круглим через border-radius 50% */
+.round {
+  border-radius: 50%;
+}
+
+/* --- Стиль .block1 --- */
+/* Центральний блок з прозорим чорним фоном (20% непрозорості), рамкою, відступами і шириною 40.5em */
+/* Може використовуватися як контейнер для тексту чи секції контенту */
+.block1 {
+  
+  text-align: center;
+  padding: 1px 1px;
+  width: 10em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px; /* заміни 30px на будь-який розмір, який хочеш */
+ }
+.block0 {
+  
+  text-align: center;
+  padding: 1px 10px;
+  width: 10em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px; /* заміни 30px на будь-який розмір, який хочеш(верхня частина екрану, де ROOM написано */ 
+
+
+}
+
+/* --- Стиль .name --- */
+/* Можливо використовується для імені користувача або заголовка секції */
+/* Прозорий фон, чорний текст, центрований, внутрішні відступи 40px, ширина 10em, шрифт 30px */
+.name {
+  background: rgba(0,0,0,0);
+  color: #black;
+  padding: 40px; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+  font-size: 30px;
+}
+
+/* --- Стиль .navbar --- */
+/* Фіксована навігаційна панель внизу екрану */
+/* Темно-червоний фон, чорний текст, ширина 100%, центрований текст, невеликі внутрішні відступи, завжди видима */
+.navbar {
+  overflow: hidden;
+    color: #black;
+  position: fixed;
+  bottom: 0;
+  width: 65%;
+  border: 2px solid black;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 15px;
+  background: linear-gradient(to bottom, #470000, #821300);
+  
+}
+
+
+/* --- Стилі масштабування при наведенні --- */
+/* .scale та .scale2 застосовують ефект масштабування при наведенні на елемент */
+/* Перший має повільну анімацію 0.5s, другий швидшу 0.2s */
+.scale {
+  transition: 0.5s; 
+}
+.scale:hover {
+  transform: scale(1.1); 
+}
+
+.scale2 {
+  transition: 0.2s; 
+}
+.scale2:hover {
+  transform: scale(1.1); 
+}
+.container {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 65%;
+  margin-left: auto;
+margin-right: auto;
+
+}
+.container2 {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: auto;
+margin-right: auto;
+/* Цей стиль зверху підтримує два блоки із посиланнями на пошту і тд */
+}
+
+.block3 {
+   background: rgba(0,0,0,0.3); /* Прозорий чорний фон (30% непрозорості) */
+   color: #470000;                  /* Колір тексту всередині блоку чорний */
+   padding: 13px;                 /* Внутрішні відступи від країв блоку */
+   margin-bottom: 20px;           /* Відступ знизу від інших елементів */
+   width: 300px;                   /* Фіксована ширина блоку */
+   height: 190px;                  /* Фіксована висота блоку */
+   text-align: center;             /* Текст всередині по центру */
+   transition: transform 0.5s;     /* Плавна анімація при зміні трансформацій (наприклад hover) */
+    border-radius: 19px;
+    border: 4px solid #470000;
+
+}
+
+.block3:hover {
+   transform: scale(1.1);          /* При наведенні блок збільшується на 10% */
+}
+
+.block3 a {
+   display: block;                 /* Посилання займає весь блок */
+   width: 100%;                    
+   height: 100%;                   
+   text-decoration: none;          /* Без підкреслення тексту */
+   color: black;                   /* Колір тексту посилання чорний */
+}
+#dagurdsa-nevailable {
+  position: fixed; /* фіксоване положення на екрані */
+  top: 10px;      /* відступ від верхнього краю */
+  left:60;         /* відступ від лівого краю */
+  width: 38px;     /* ширина блоку */
+  height: 37px;    /* висота блоку */
+  
+  /* іконка замість фону */
+  background-image: url('img/2/2'); /* вставте свій шлях до іконки */
+  background-size: cover;    /* іконка займає весь блок */
+  background-repeat: no-repeat; /* не повторювати іконку */
+  background-position: center;  /* по центру блоку */
+  
+  -webkit-transition-duration: 0.3s; /* анімація для вебкита */
+  -moz-transition-duration: 0.3s;    /* анімація для Mozilla */
+  -o-transition-duration: 0.3s;      /* анімація для Opera */
+  transition-duration: 0.3s;         /* стандартна анімація */
+}
+
+
+#gechusudesab-sequiremen {
+  position: fixed;
+  top: 60px;
+  left: 5;
+  background: #363636;
+  color: #f5f5f5;
+  width: 330px;
+  height: 373px;
+  padding: 20px;
+  display: none; /* спочатку меню приховане */
+   text-align: center; 
+   border-radius: 19px;
+    border: 4px solid #470000;
+}
+
+
+#gechusudesab-sequiremen li {
+  padding: 10px 0;
+  cursor: default;
+  transition: color 0.2s;
+}
+
+#gechusudesab-sequiremen a {
+  color: inherit;                   /* використовуємо колір тексту блоку */
+  text-decoration: none;            /* прибираємо підкреслення */
+  cursor: default;                  /* курсор як у звичайного тексту */
+}
+hr {
+  border: none;           /* прибираємо стандартну рамку */
+  height: 1px;            /* товщина лінії */
+  background-color: red;  /* червоний колір */
+  margin: 10px 0;         /* відступи зверху і знизу */
+}
