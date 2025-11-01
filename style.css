@@ -230,7 +230,7 @@ background: rgba(0,0,0,0.3);
   flex-wrap: wrap;         /* Дозволяє кнопкам переноситись на наступний рядок, якщо не влізли */
   justify-content: center; /* Центрує кнопки по горизонталі */
   gap: 10px;               /* Відстань між кнопками */
-  width: 100%;
+  width: 97%;
   margin-bottom: 20px;
     padding: 10px;           /* Внутрішні відступи, щоб кнопки не прилипали до краю */
   border-radius: 10px;     /* За бажанням */
@@ -259,4 +259,5 @@ background: rgba(0,0,0,0.3);
   .switch-content > div.active {
     display: block;
   }
+
 
