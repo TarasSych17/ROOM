@@ -259,5 +259,21 @@ background: rgba(0,0,0,0.3);
   .switch-content > div.active {
     display: block;
   }
+  
+  .rotate {
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+
+.icon {
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    animation: lift 0.6s ease forwards;
+}
 
 
