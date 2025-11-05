@@ -44,7 +44,7 @@ body {
   
   text-align: center;
   padding: 1px 1px;
-  width: 10em;
+  width: 14em;
   margin-left: auto;
   margin-right: auto;
   font-size: 20px; /* заміни 30px на будь-який розмір, який хочеш */
@@ -53,7 +53,7 @@ body {
   
   text-align: center;
   padding: 1px 10px;
-  width: 10em;
+  width: 12em;
   margin-left: auto;
   margin-right: auto;
   font-size: 20px; /* заміни 30px на будь-який розмір, який хочеш(верхня частина екрану, де ROOM написано */ 
@@ -134,7 +134,7 @@ margin-right: auto;
 
 .block3 {
    background: rgba(0,0,0,0.3); /* Прозорий чорний фон (30% непрозорості) */
-   color: #470000;                  /* Колір тексту всередині блоку чорний */
+   color: #FF8F8F;                  /* Колір тексту всередині блоку чорний */
    padding: 13px;                 /* Внутрішні відступи від країв блоку */
    margin-bottom: 20px;           /* Відступ знизу від інших елементів */
    width: 300px;                   /* Фіксована ширина блоку */
@@ -261,7 +261,7 @@ background: rgba(0,0,0,0.3);
   }
   
   .rotate {
-  animation: spin 5s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
@@ -275,7 +275,6 @@ background: rgba(0,0,0,0.3);
 .icon:hover {
     animation: lift 0.6s ease forwards;
 }
-
 
 
 
