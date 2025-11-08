@@ -25,10 +25,14 @@ body {
 /* Прозорий фон, темно-червоний текст, центрований, внутрішні відступи 30px, ширина 40em */
 .sss {
   background: rgba(0,0,0,0.5);
-  color: #832727;
-  padding: 30px; 
+  color: #FF0000;
+  padding: 40px; 
   text-align: center;
-  width: 40em;
+  width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+    border-radius: 5px;
+   border: 5px solid #630000;
 }
 /* --- Стиль .round --- */
 /* Для круглих елементів, наприклад фото або кнопки */
@@ -275,7 +279,6 @@ background: rgba(0,0,0,0.3);
 .icon:hover {
     animation: lift 0.6s ease forwards;
 }
-
 
 
 
