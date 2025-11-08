@@ -3,14 +3,14 @@
   /* Меню */
   nav {
  
-    top: 0;
+    
     width: 50%;
-    background-color: #333;
+     background: rgba(0,0,0,0.3);
     padding: 10px 0;
     text-align: center;
-    z-index: 1000;
-      margin-left: auto;
-margin-right: auto;
+        margin-left: auto;
+    margin-right: auto;
+     border-radius: 3px;
 
   }
 
@@ -43,19 +43,23 @@ margin-right: auto;
 
   .command {
     background-color: #1F1B1B;
-    border: 5px solid #630000;
-    padding: 5px;
+   
+    color: #ffffff;
+    padding: 10px;
     margin: 10px 0;
     border-radius: 10px;
-    width: 40%; 
+    position: relative; 
+
+          margin-left: auto;
+margin-right: auto;  
   }
 
   .copy-btn {
     position: absolute;
     right: 10px;
     top: 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: #630000;
+    color: #ffffff;
     border: none;
     padding: 5px 10px;
     border-radius: 3px;
@@ -82,5 +86,4 @@ margin-right: auto;
     font-weight: bold;
     margin-right: 10px;
   }
-
 
