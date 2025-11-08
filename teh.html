@@ -37,7 +37,7 @@
 
 </div>
 <div class="block1">
-<h1>ROOM-info</h1>
+<h1>DIAGNOSTIC</h1>
 
 </div>
 <div class="block0">
@@ -53,64 +53,159 @@
 <nav>
   <a href="#OLT">OLT</a>
   <a href="#CORE">SWITCH-CORE</a>
-  <a href="#mikrotik">Mikrotik</a>
+  <a href="#zyxel">zyxel</a>
    <a href="#DL">D-LINK</a>
  
-    <label for="portNumber"></label>
-    <input id="portNumber"  oninput="updateCommands()">
+    
 
 
 </nav>
+<br><br>
+<div class = "sss">
+<h3>Впишіть порт</h3>
+<label for="portNumber"></label>
+    <input id="portNumber"  oninput="updateCommands()">
 
 <main>
 
   <!-- Cisco -->
   <section id="OLT">
     <h2>OLT</h2>
-
+    <hr>
+<h3>Пошук Ону по мак адресі +мак адреса ону пристрою</h3>
     <div class="command">
-      show interface status | include Gi0/<span class="port">1</span>
-      <button class="copy-btn" onclick="copyCommand(this)">Копіювати</button>
+      sh epon onu-information mac-address
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
-
+<h3>Статистика всіх ону на олті</h3>
     <div class="command">
-      show run interface Gi0/<span class="port">1</span>
-      <button class="copy-btn" onclick="copyCommand(this)">Копіювати</button>
+     sh epon onu-status-count
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
-
+<h3>Перегляд активних ONU</h3>
     <div class="command">
-      show mac address-table interface Gi0/<span class="port">1</span>
-      <button class="copy-btn" onclick="copyCommand(this)">Копіювати</button>
+      show epon active-onu
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
+ 
+  <h3>Пакети </h3>
+    <div class="command">
+      sh interface ePON 0/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    <h3>Перегляд мак адреса абонента</h3>
+    <div class="command">
+      sh mac address-table interface ePON 0/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    <h3>Лінк між ону клієнтом </h3>
+    <div class="command">
+      show epon interface epoN 0/<span class="port">1</span> onu port 1 state
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    <h3>Рівень від ONU до OLT</h3>
+    <div class="command">
+      sh epon optical-transceiver-diagnosis interface ePON 0/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    <h3>Рівень від OLT до ONU</h3>
+    <div class="command">
+      sh epon interface ePON 0/<span class="port">1</span> onu ctc optical-transceiver-diagnosis
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    
   </section>
+  
 
-  <!-- HP -->
+  <!-- Едж кор -->
   <section id="CORE">
-    <h2>Edge-core</h2>
-
+    <h2>SWITCH-CORE</h2>
+  <h3>Статистика всіх портів</h3>
     <div class="command">
-      show interfaces brief | include <span class="port">1</span>
-      <button class="copy-btn" onclick="copyCommand(this)">Копіювати</button>
+      sh interfaces brief
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
-
+      <h3>Мак адреса</h3>
+     <div class="command">
+     sh mac-address-table 1/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+     <h3>Перезавантажити порт</h3>
+         <div class="command">
+         config
+         <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+         </div>
+     <div class="command">
+     interface ethernet 1/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+         <div class="command">
+         shutdown
+                 <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+          </div>
+                  
+           <div class="command">
+           no shutdown
+           <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+          </div>
+      <h3>Статистика на порті помилки і пакети</h3>
+     <div class="command">
+      show interfaces counters ethernet 1/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+      <h3>Почистити пакети/помилки</h3>
+     <div class="command">
+      clear counters ethernet 1/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+         <h3>Подивитись чи влан не злетів на гілці або олті </h3>
+     <div class="command">
+      sh mac address-table dynamic vlan <span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+      <h3>Тест кабелю команда 1</h3>
+     <div class="command">
+      test cable-diagnostics interface ethernet 1/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+      <h3>Тест кабелю команда 2</h3>
+     <div class="command">
+      show cable-diagnostics interface ethernet 1/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+  <h3>Подивитись чи флапає порт</h3>
     <div class="command">
-      show running-config interface <span class="port">1</span>
-      <button class="copy-btn" onclick="copyCommand(this)">Копіювати</button>
+      sh log ram 
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
+    <h3>Обжимка</h3>
+     <div class="command">
+      configure
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button> </div>
+       <div class="command">
+      interface ethernet 1/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button></div>
+      <div class="command">
+      media-type sfp-forced 1000sfp
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button></div>
+       <h4>Або</h4>
+    <div class="command">
+      media-type sfp-forced 100fx
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button></div>
   </section>
 
   <!-- Mikrotik -->
-  <section id="mikrotik">
-    <h2>Mikrotik</h2>
+  <section id="zyxel">
+    <h2>zyxel</h2>
 
     <div class="command">
-      /interface print where name~"<span class="port">1</span>"
-      <button class="copy-btn" onclick="copyCommand(this)">Копіювати</button>
+      show interfaces status <span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
 
     <div class="command">
       /interface ethernet monitor <span class="port">1</span>
-      <button class="copy-btn" onclick="copyCommand(this)">Копіювати</button>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
   </section>
   
@@ -119,16 +214,17 @@
 
     <div class="command">
       /interface print where name~"<span class="port">1</span>"
-      <button class="copy-btn" onclick="copyCommand(this)">Копіювати</button>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
 
     <div class="command">
       /interface ethernet monitor <span class="port">1</span>
-      <button class="copy-btn" onclick="copyCommand(this)">Копіювати</button>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
   </section>
 
 </main>
+</div>
 
 <script>
   // Функція для оновлення номера порта в усіх командах
@@ -141,10 +237,10 @@
 
   // Копіювання конкретної команди
   function copyCommand(button) {
-    const commandText = button.parentElement.textContent.replace('Копіювати', '').trim();
+    const commandText = button.parentElement.textContent.replace('copy', '').trim();
     navigator.clipboard.writeText(commandText).then(() => {
-      button.textContent = 'Скопійовано!';
-      setTimeout(() => button.textContent = 'Копіювати', 1500);
+      button.textContent = 'yes!';
+      setTimeout(() => button.textContent = 'copy', 1500);
     });
   }
 </script>
@@ -173,7 +269,6 @@
 </body> 
 
 </html>
-
 
 
 
