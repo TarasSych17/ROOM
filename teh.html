@@ -198,15 +198,51 @@
   <section id="zyxel">
     <h2>zyxel</h2>
 
-    <div class="command">
-      show interfaces status <span class="port">1</span>
+   <h3>Інфа по портах</h3>
+     <div class="command">
+      show interfaces status
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+   <h3>статистика на порті</h3>
+     <div class="command">
+      show interfaces <span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+   <h3>Тест кабелю команда 2</h3>
+     <div class="command">
+      show cable-diagnostics interface ethernet 1/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+   <h3>стерти статистику на порті</h3>
+     <div class="command">
+      clear interfaces <span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+   <h3>мак адреса на порті</h3>
+     <div class="command">
+      sh mac address-table port <span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+   <h3>перезавантажити порт</h3>
+     <div class="command">
+      conf
       <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
 
-    <div class="command">
-      /interface ethernet monitor <span class="port">1</span>
+     <div class="command">
+      interface port-channel <span class="port">1</span>
       <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
+      <div class="command">
+       inactive
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+   <div class="command">
+       
+      no inactive
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+  
   </section>
   
     <section id="DL">
@@ -269,6 +305,7 @@
 </body> 
 
 </html>
+
 
 
 
