@@ -201,7 +201,12 @@ window.onload = showRandomQuote;
 const icon = document.getElementById('dagurdsa-nevailable');
 const menu = document.getElementById('gechusudesab-sequiremen');
 
+// Відкриваємо/закриваємо меню при кліку на іконку
 icon.addEventListener('click', () => {
   menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
 });
 
+// Пропускаємо клік по меню, щоб воно не закривалося
+menu.addEventListener('click', (e) => {
+  e.stopPropagation();  // Зупиняє поширення події, щоб меню не закрилося
+});
