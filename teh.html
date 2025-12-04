@@ -247,11 +247,26 @@
   
     <section id="DL">
     <h2>D-LINK</h2>
-
+    <h3>пСтан порта</h3>
     <div class="command">
-      /interface print where name~"<span class="port">1</span>"
+      show ports "<span class="port">1</span>"
       <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
+     <h3>Перезавантаження порта</h3>
+     <div class="command">
+       config ports  <span class="port">1</span>" s d 
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+        <div class="command">
+        config ports  <span class="port">1</span>" s e
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+     <h3>Мак адерса</h3>
+     <div class="command">
+      show fdb port <span class="port">1</span>" 
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    
 
     <div class="command">
       /interface ethernet monitor <span class="port">1</span>
@@ -305,6 +320,7 @@
 </body> 
 
 </html>
+
 
 
 
