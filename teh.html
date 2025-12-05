@@ -77,6 +77,40 @@
       sh epon onu-information mac-address
       <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
+   <h3>Конструктор мак адреси</h3>
+<div class="command">
+  sh epon onu-information mac-address <span id="macOutput"></span>
+  <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+</div>
+<br>
+<input id="inputMac" type="text" placeholder="Введіть MAC (70:a5:6a:c7:ec:d6)">
+<br><br>
+<input id="outputMac" type="text" readonly placeholder="Результат зʼявиться тут">
+<script>
+function convertMac(mac) {
+    const cleaned = mac.replace(/:/g, "");
+    const groups = cleaned.match(/.{1,4}/g);
+    return groups ? groups.join(".") : "";
+}
+document.getElementById("inputMac").addEventListener("input", function () {
+    const input = this.value.trim();
+    const result = convertMac(input);
+    document.getElementById("outputMac").value = result;
+    document.getElementById("macOutput").textContent = result; // Оновлюємо команду з MAC
+});
+
+function copyCommand(btn) {
+    const commandText = `sh epon onu-information mac-address ${document.getElementById("macOutput").textContent}`;
+    navigator.clipboard.writeText(commandText)
+        .then(() => {
+            btn.textContent = "copied!";
+            setTimeout(() => btn.textContent = "copy", 1500);
+        });
+}
+</script>
+   
+
+   
 <h3>Статистика всіх ону на олті</h3>
     <div class="command">
      sh epon onu-status-count
@@ -325,6 +359,7 @@
 </body> 
 
 </html>
+
 
 
 
