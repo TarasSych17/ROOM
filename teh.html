@@ -73,20 +73,25 @@
     <h2>OLT</h2>
     <hr>
 <h3>Пошук Ону по мак адресі +мак адреса ону пристрою</h3>
-    
-<div class="command">
+   <div class="command">
   sh epon onu-information mac-address <span id="macOutput"></span>
   <button class="copy-btn" onclick="copyCommand(this)">copy</button>
 </div>
+
 <br>
-<input id="inputMac" type="text" placeholder="Введіть MAC (70:a5:6a:c7:ec:d6)">
+
+<input id="inputMac" type="text" placeholder="Введіть MAC ">
 <br><br>
+
+<input id="outputMac" type="text" readonly placeholder="Результат зʼявиться тут">
+
 <script>
 function convertMac(mac) {
     const cleaned = mac.replace(/:/g, "");
     const groups = cleaned.match(/.{1,4}/g);
     return groups ? groups.join(".") : "";
 }
+
 document.getElementById("inputMac").addEventListener("input", function () {
     const input = this.value.trim();
     const result = convertMac(input);
@@ -103,6 +108,7 @@ function copyCommand(btn) {
         });
 }
 </script>
+
    
 
    
@@ -354,6 +360,7 @@ function copyCommand(btn) {
 </body> 
 
 </html>
+
 
 
 
