@@ -73,11 +73,7 @@
     <h2>OLT</h2>
     <hr>
 <h3>Пошук Ону по мак адресі +мак адреса ону пристрою</h3>
-    <div class="command">
-      sh epon onu-information mac-address
-      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
-    </div>
-   <h3>Конструктор мак адреси</h3>
+    
 <div class="command">
   sh epon onu-information mac-address <span id="macOutput"></span>
   <button class="copy-btn" onclick="copyCommand(this)">copy</button>
@@ -85,7 +81,6 @@
 <br>
 <input id="inputMac" type="text" placeholder="Введіть MAC (70:a5:6a:c7:ec:d6)">
 <br><br>
-<input id="outputMac" type="text" readonly placeholder="Результат зʼявиться тут">
 <script>
 function convertMac(mac) {
     const cleaned = mac.replace(/:/g, "");
@@ -359,6 +354,7 @@ function copyCommand(btn) {
 </body> 
 
 </html>
+
 
 
 
