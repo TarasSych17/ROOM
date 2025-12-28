@@ -48,7 +48,7 @@ body {
   
   text-align: center;
   padding: 1px 1px;
-  width: 14em;
+  width: 16em;
   margin-left: auto;
   margin-right: auto;
   font-size: 20px; /* заміни 30px на будь-який розмір, який хочеш */
@@ -281,6 +281,62 @@ background: rgba(0,0,0,0.3);
 }
 
 
+
+/* Блок з відео та описом */
+.video-item {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+/* Hover-ефект */
+.video-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+/* Контейнер для відео */
+.video-wrapper {
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Опис відео */
+.video-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-details h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.video-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 768px) {
+  .video-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-details {
+    text-align: center;
+    margin-top: 12px;
+  }
+}
 
 
 
