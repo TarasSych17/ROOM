@@ -1,7 +1,7 @@
 /* --- Стилі для body --- */
 /* Блоку body задається фонове зображення 'img/fon.jpg', яке не повторюється, фіксоване при прокрутці і займає всю площу екрану */
 body {
-  background: url(img/fon.jpg) no-repeat fixed;
+  background: url(img/rm.png) no-repeat fixed;
   background-size: cover;
 }
 
@@ -337,6 +337,7 @@ background: rgba(0,0,0,0.3);
     margin-top: 12px;
   }
 }
+
 
 
 
