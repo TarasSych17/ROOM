@@ -1,4 +1,4 @@
-// Перша форма
+// Пошук по номеру телефону
 document.getElementById('phoneSearchForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -15,18 +15,18 @@ document.getElementById('phoneSearchForm').addEventListener('submit', function(e
 });
 
 
-// Друга форма
+// Пошук по номеру заявки
 document.getElementById('phoneSearchForm1').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const phone = document.getElementById('phone1').value.trim();
+    const requestNumber = document.getElementById('phone1').value.trim();
 
-    if (!phone) {
+    if (!requestNumber) {
         alert("Будь ласка, введіть номер заявки.");
         return;
     }
 
-    const url = `ТУТ_ДРУГЕ_ПОСИЛАННЯ${phone}`;
+    const url = `https://billing.columbus.te.ua/calendar.php?jbs_id_filter=${requestNumber}&jcal_a=&jbs_id=${requestNumber}&jbs_brief=1#jbs`;
 
     window.open(url, '_blank');
 });
