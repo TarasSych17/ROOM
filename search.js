@@ -16,7 +16,7 @@ document.getElementById('phoneSearchForm').addEventListener('submit', function(e
 
 
 // Пошук по номеру заявки
-document.getElementById('phoneSearchForm1').addEventListener('submit', function(e) {
+document.getElementById('phoneSearchForm1').addEventListener('submit1', function(e) {
     e.preventDefault();
 
     const requestNumber = document.getElementById('phone1').value.trim();
