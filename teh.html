@@ -51,7 +51,8 @@
 <!--- Місце для написання основного коду--------------------------------------------------------------------------------------------------------------------------------------------->
 
 <nav>
-  <a href="#OLT">OLT</a>
+  <a href="#OLT">OLT-epon</a>
+  <a href="#OLT">OLT-gpon</a>
   <a href="#CORE">SWITCH-CORE</a>
   <a href="#zyxel">zyxel</a>
    <a href="#DL">D-LINK</a>
@@ -69,8 +70,8 @@
 <main>
 
   <!-- Cisco -->
-  <section id="OLT">
-    <h2>OLT</h2>
+  <section id="OLT-epon">
+    <h2>OLT-epon</h2>
     <hr>
 <h3>Пошук Ону по мак адресі +мак адреса ону пристрою</h3>
    <div class="command">
@@ -146,6 +147,90 @@ function copyCommand(btn) {
     <h3>Рівень від OLT до ONU</h3>
     <div class="command">
       sh epon interface ePON 0/<span class="port">1</span> onu ctc optical-transceiver-diagnosis
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    
+  </section>
+
+
+ 
+  <section id="OLT-gpon">
+    <h2>OLT-gpon</h2>
+    <hr>
+<h3>Пошук Ону по сирійнику</h3>
+   <div class="command">
+sh gpon onu-information sn  <span id="macOutput"></span>
+  <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+</div>
+
+<br>
+
+<input id="inputMac" type="text" placeholder="Введіть MAC ">
+
+
+<input id="outputMac" >
+
+<script>
+function convertMac(mac) {
+    const cleaned = mac.replace(/:/g, "");
+    const groups = cleaned.match(/.{1,4}/g);
+    return groups ? groups.join(".") : "";
+}
+
+document.getElementById("inputMac").addEventListener("input", function () {
+    const input = this.value.trim();
+    const result = convertMac(input);
+    document.getElementById("outputMac").value = result;
+    document.getElementById("macOutput").textContent = result; // Оновлюємо команду з MAC
+});
+
+function copyCommand(btn) {
+    const commandText = `sh epon onu-information mac-address ${document.getElementById("macOutput").textContent}`;
+    navigator.clipboard.writeText(commandText)
+        .then(() => {
+            btn.textContent = "copied!";
+            setTimeout(() => btn.textContent = "copy", 1500);
+        });
+}
+</script>
+
+   
+
+   
+<h3>Статистика всіх ону на олті</h3>
+    <div class="command">
+     sh gpon onu-status-count
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+<h3>Перегляд активних ONU</h3>
+    <div class="command">
+      show gpon active-onu
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+ 
+  <h3>Пакети </h3>
+    <div class="command">
+      sh int ra gp 0/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    <h3>Перегляд мак адреса абонента</h3>
+    <div class="command">
+      sh mac address-table interface gPON 0/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    <h3>Лінк між ону клієнтом </h3>
+    <div class="command">
+      show epon interface gpoN 0/<span class="port">1</span> onu port 1 state
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    <h3>Рівень від ONU до OLT</h3>
+    <div class="command">
+      sh gpon optical-transceiver-diagnosis interface gPON 0/<span class="port">1</span>
+      <button class="copy-btn" onclick="copyCommand(this)">copy</button>
+    </div>
+    <h3>Рівень від OLT до ONU</h3>
+    <div class="command">
+      sh gpon interface gPON 0/<span class="port">1</span> onu ctc optical-transceiver-diagnosis
       <button class="copy-btn" onclick="copyCommand(this)">copy</button>
     </div>
     
