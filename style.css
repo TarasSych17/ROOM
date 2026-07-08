@@ -340,5 +340,43 @@ background: rgba(0,0,0,0.3);
 
 
 
+.search-block{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    background:transparent;
+    width:100%;
+}
 
+.search-form{
+    display:flex;
+    align-items:center;
+}
+
+.search-form input{
+    width:180px;
+    height:42px;
+    padding:0 14px;
+    border:2px solid #8B0000; /* темно-червоний */
+    border-radius:12px;
+    background:transparent;
+    color:#fff;
+    outline:none;
+    font-size:15px;
+}
+
+.search-form input::placeholder{
+    color:#cfcfcf;
+}
+
+.search-form input:focus{
+    border-color:#A00000;
+    box-shadow:0 0 8px rgba(139,0,0,.4);
+}
+
+.search-form button{
+    margin-left:8px;
+}
 
