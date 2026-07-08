@@ -64,50 +64,7 @@ body {
 
 
 }
-.block12 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;              /* відстань між полями */
-    flex-wrap: nowrap;      /* всі в один рядок */
-    width: 75em;
-    margin: 0 auto;
-    padding: 10px;
-}
 
-.block12 form {
-    display: flex;
-    align-items: center;
-}
-
-.block12 input {
-    background: #5b0000;    /* темно-червоний */
-    color: white;
-    border: 1px solid #8b0000;
-    border-radius: 12px;
-    padding: 8px 12px;
-    font-size: 16px;
-    outline: none;
-}
-
-.block12 input::placeholder {
-    color: #d9b3b3;
-}
-
-.block12 button {
-    margin-left: 6px;
-    background: #8b0000;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 8px 14px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.block12 button:hover {
-    background: #a80000;
-}
 /* --- Стиль .name --- */
 /* Можливо використовується для імені користувача або заголовка секції */
 /* Прозорий фон, чорний текст, центрований, внутрішні відступи 40px, ширина 10em, шрифт 30px */
