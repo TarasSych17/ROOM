@@ -96,8 +96,8 @@ body {
 
 .block12 button {
     margin-left: 6px;
+    background: rgba(0,0,0,0);
    
-    color: white;
     border: none;
     border-radius: 12px;
     padding: 8px 14px;
