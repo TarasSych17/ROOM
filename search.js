@@ -47,3 +47,17 @@ document.getElementById('contractSearchForm').addEventListener('submit', functio
 
     window.open(url, '_blank');
 });
+document.getElementById('staffSearchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const staff = document.getElementById('staff').value.trim();
+
+    if (!staff) {
+        alert("Будь ласка, введіть прізвище.");
+        return;
+    }
+
+    const url = `https://billing.columbus.te.ua/staff.php?stf_name_alt_filter=${encodeURIComponent(staff)}#stf`;
+
+    window.open(url, '_blank');
+});
